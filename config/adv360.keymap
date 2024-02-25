@@ -54,7 +54,7 @@
    &kp TAB         &kp Q         &kp W             &kp E              &kp R   &kp T               &none                                                                 &none   &kp Y   &kp KP_N7  &kp UP_ARROW         &kp UP     &kp UP_ARROW   &kp BSLH
     &trans  &kp C_VOL_DN  &kp C_VOL_UP  &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &kp G               &none  &kp LCTRL  &kp LALT                   &kp LGUI  &kp RCTRL      &none   &kp H    &kp LEFT         &none      &kp RIGHT        &kp RIGHT    &kp SQT
     &trans         &kp Z         &kp X    &kp LEFT_BRACE    &kp RIGHT_BRACE   &kp B                                 &kp HOME                  &kp PG_UP                         &kp N   &kp KP_N1      &kp DOWN       &kp DOWN         &kp DOWN  &kp RSHFT
-     &mo 2     &kp GRAVE      &kp CAPS            &trans             &trans                    &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &kp UP      &kp DOWN     &kp KP_DOT         &kp RBKT      &mo 2
+     &mo 2     &kp GRAVE      &kp CAPS            &trans             &trans                    &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &trans      &kp DOWN     &kp KP_DOT         &kp RBKT      &mo 2
             >;
         };
 
