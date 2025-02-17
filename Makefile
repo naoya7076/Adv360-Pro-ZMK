@@ -1,7 +1,8 @@
-DOCKER := $(shell { command -v podman || command -v docker; })
-TIMESTAMP := $(shell date -u +"%Y%m%d%H%M")
-COMMIT := $(shell git rev-parse --short HEAD 2>/dev/null)
-ifeq ($(shell uname),Darwin)
+DOCKER := "$(shell { command -v podman || command -v docker; })"
+TIMESTAMP := "$(shell date -u +"%Y%m%d%H%M")"
+COMMIT := "$(shell git rev-parse --short HEAD 2>/dev/null)"
+detected_OS := "$(shell uname)"  # Classify UNIX OS
+ifeq ($(strip $(detected_OS)),Darwin) #We only care if it's OS X
 SELINUX1 :=
 SELINUX2 :=
 else
@@ -12,7 +13,7 @@ endif
 .PHONY: all left clean_firmware clean_image clean
 
 all:
-	$(shell bin/get_version_local.sh clique >> /dev/null)
+	$(shell bin/get_version.sh >> /dev/null)
 	$(DOCKER) build --tag zmk --file Dockerfile .
 	$(DOCKER) run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
@@ -24,7 +25,7 @@ all:
 	git checkout config/version.dtsi
 
 left:
-	$(shell bin/get_version_local.sh clique >> /dev/null)
+	$(shell bin/get_version.sh >> /dev/null)
 	$(DOCKER) build --tag zmk --file Dockerfile .
 	$(DOCKER) run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
